@@ -6,11 +6,7 @@
     </head>
     
     <body>
-        <header>
-            <section>"logo GBAF"</section>
-            <section>$user_NAME&PREMON</section>
-        </header>
-
+    <?php include("header.php"); ?>
         <main>
             <div class="presentation">
             <article>
@@ -22,13 +18,14 @@
                     <h2> text acteurs et partenaires</h2>
                 </section>
             </div>
-           <?php include("sectin_acteurs.php"); ?>
+           <?php include("section_acteurs.php"); ?>
             </article>        
         </main>
 
         <footer>
             <nav>
-                <p>| Mention légales | Contacts |</p>
+                <p>| <a href="mentions_legales.php" target="_blank">Mention légales</a> 
+                | <a href="contact.php" target="_blank">Contact</a> |</p>
             </nav>
         </footer>    
     </body>
