@@ -11,7 +11,7 @@
         <?php
         if (isset($_GET['userFirstName']) AND isset($_GET['userLastName']))
         {
-            echo '<p>Bonjour ' . $_GET['userFirstName'] . " ". $_GET['userLastName'] . '</p>';
+            echo '<p>Bonjour ' . $_GET['userFirstName'] . ' '. $_GET['userLastName'] . '</p>';
         } 
         else
         {

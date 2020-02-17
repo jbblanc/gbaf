@@ -10,9 +10,9 @@
         }
         else
         {
-            echo '<a href="connection.php">Se connecter</a>';
+            echo '<a href="routes/connection.php">Se connecter</a>';
         }
     ?>
-    <a href="user_page.php" target="_blank">$user_NAME&PREMON</a>
+    <a href="routes/user_page.php" target="_blank">$user_NAME&PREMON</a>
 </header>
 </html>

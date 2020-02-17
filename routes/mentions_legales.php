@@ -1,4 +1,4 @@
-<?php include('header.php');?>
+<?php include('routes/header.php');?>
 
 <h1>Mentions légales</h1>
 

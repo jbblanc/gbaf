@@ -6,7 +6,7 @@
     <h2>Nous Contacter</h2>
     <p>Un probléme, une question ? Contacter nous via le formulaire suivant.</p>
     <div class="form_contact">
-    <form name="contact" method="post" action="contact.php">
+    <form name="contact" method="post" action="routes/contact.php">
         <textarea type="text" placeholder="Message" required></textarea> <br/>
         <input type="text" placeholder="E-mail" required><br/>
         <input type="submit" name="envoyer" value="ENVOYER"/></br>
