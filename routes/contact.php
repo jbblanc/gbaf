@@ -1,3 +1,7 @@
+<head>
+    <meta charset="utf-8" />
+    <title>Contact</title>
+    </head>
 <div class="container container-fluide">
     <h2>Nous Contacter</h2>
     <p>Un probléme, une question ? Contacter nous via le formulaire suivant.</p>
@@ -14,8 +18,8 @@
                 <li data-selected="Technical problem">Probléme technique</li>
                 <li data-selected="Idea or suggestion">Commentaires ou suggestions</li>
             </ul>
-        </div>
         <input name="contact_subject" class="unvisible" required="">
+        </div>
     </form>
     </div>
 </div>
