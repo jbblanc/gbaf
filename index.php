@@ -1,12 +1,12 @@
 <!Doctype html>
 <html>
     <head>
-        <?php include("doctype.php");?>
+        <?php include("./doctype.php");?>
         <title>GBAF extranet</title>
     </head>
     
     <body>
-    <?php include("routes/header.php"); ?>
+    <?php include("./header.php"); ?>
         <main>
             <div class="presentation">
             <article>
@@ -18,14 +18,14 @@
                     <h2> text acteurs et partenaires</h2>
                 </section>
             </div>
-           <?php include("routes/section_acteurs.php"); ?>
+           <?php include("./section_acteurs.php"); ?>
             </article>        
         </main>
 
         <footer>
             <nav>
-                <p>| <a href="routes/mentions_legales.php" target="_blank">Mention légales</a> 
-                | <a href="routes/contact.php" target="_blank">Contact</a> |</p>
+                <p>| <a href="./mentions_legales.php" target="_blank">Mention légales</a> 
+                | <a href="./contact.php" target="_blank">Contact</a> |</p>
             </nav>
         </footer>    
     </body>
