@@ -1,7 +1,7 @@
 <!Doctype html>
 <html>
     <head>
-        <meta charset="utf-8" />
+        <?php include("doctype.php");?>
         <title>GBAF extranet</title>
     </head>
     

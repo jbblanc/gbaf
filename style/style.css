@@ -1,3 +1,21 @@
-p {
-    
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 10;
+    padding: 0;
+    font-size: calc(1vw + 1.2vh);
+}
+
+h1 {
+    color: red;
+}
+
+h2 {
+    color: palevioletred;
+}
+
+h3 {
+    color: green;
 }

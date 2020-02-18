@@ -1,11 +1,16 @@
 <!Doctype html>
-<html></html>
+<html>
     <head>
-        <meta charset="utf-8" />
+        <?php include("../doctype.php");?>
         <title>Connection</title>
     </head>
-<form name="connection" method="post" action="routes/saisie.php">
-        Entrez votre pseudo : <input type="text" name="pseudo"/> <br/>
-        Entrez votre mot de pass : <input type="password" name="password"/><br/>
-        <input type="submit" name="valider" value="VALIDER"/>
-</form>
+    
+    <body>
+        <form name="connection" method="POST" action="connection_saisie.php">
+                <p>Nom <input type="text" name="userLastName" required/> <br/></p>
+                <p>Prénom <input type="text" name="userFirstName" required/> <br/></p>
+                <p>Mot de pass <input type="password" name="password" required/><br/></p>
+                <input type="submit" name="valider" value="VALIDER"/>
+        </form>
+    </body>
+</html>
