@@ -1,31 +1,29 @@
 <hmtl>
     <head>
-        <?php
-        include("./doctype.php");
-        include("./header.php");?>
+        <?php include("./doctype.php");?>
+        <title>Contact</title>
     </head>    
     <body>
-    <!-- ceartion of type form -->
+        <header>
+            <?php include('./header.php');?>
+        </header>
+    <!-- ceartion of form -->
         <div class="container_form">
             <h2>Nous Contacter</h2>
             <p>Un probléme, une question ? Contacter nous via le formulaire suivant.</p>
-            <div class="form_contact">
-                <form name="contact" method="POST" action="./contact_saisie.php">
-                    <textarea type="text" placeholder="Message" required></textarea> <br/>
-                    <input type="text" placeholder="E-mail" required><br/>
-                    <!-- adding option in list-->
-                    <div class="custom_select dropdown" data-update="contact_subject">
-                        <p><span class="selected_option">Objet</span></p>
-                        <div class="drop_menu_options">
-                            <ul class="options_list" display="hidden">
-                                <li data-selected="Technical problem">Probléme technique</li>
-                                <li data-selected="Idea or suggestion">Commentaires ou suggestions</li>
-                            </ul>
-                            <input name="contact_subject" class="unvisible">
-                        </div>
+            <div class="contact_form">
+                <form name="contact" method="post" action="./contact_saisie.php">
+                    <p>
+                        <textarea type="text" placeholder="Message" rows="10" required></textarea></br>
+                        <input type="text" placeholder="E-mail" required></br>
+                        <!-- adding option in list-->
+                        <select name="option">   
+                            <option value="Idea_or_suggestion">Commentaires ou suggestions</option>    
+                            <option value="Technical_problem">Probléme technique</option>
+                        </select>
                         <!-- buttom send-->
-                    <input type="submit" name="envoyer" value="ENVOYER"/></br>
-                    </div>
+                        <input type="submit" name="envoyer" value="ENVOYER"/></br>
+                    </p>
                 </form>
             </div>
         </div>

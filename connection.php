@@ -6,11 +6,20 @@
     </head>
     
     <body>
-        <form name="connection" method="POST" action="./connection_saisie.php">
-                <p>Nom <input type="text" name="userLastName" required/> <br/></p>
-                <p>Prénom <input type="text" name="userFirstName" required/> <br/></p>
-                <p>Mot de pass <input type="password" name="password" required/><br/></p>
+        <header>
+            <?php include('header.php');?>
+        </header>
+        <div class="form_connection">
+            <form name="connection" method="post" action="./user_page.php">
+                <p>UserName</p>
+                <input type="text" name="UserName" required/><br/>
+                <p>Password</p>
+                <input type="password" name="Password" required/><br/>
                 <input type="submit" name="valider" value="VALIDER"/>
-        </form>
+            </form>
+         </div>
+        <footer>
+            <?php include('footer.php');?>
+        </footer>
     </body>
 </html>

@@ -19,3 +19,29 @@ h2 {
 h3 {
     color: green;
 }
+
+#img_gbaf {
+    height: 5vh;
+    width: 3vw;
+    
+}
+.nav_footer {
+    background-color: gray;
+}
+
+.form_connection {
+    margin: 0;
+    background-color: oldlace;
+    width: auto;
+
+}
+
+.container_form {
+    margin: 100px;
+    background-color: oldlace;
+}
+
+div.contact_form.input {
+    width: 100%;
+    color: red;
+}

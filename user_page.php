@@ -1,7 +1,7 @@
 <!Doctype html>
 <html>
     <head>
-        <?php include("./header.php");?>
+        <?php include('./header.php');?>
         <title>Mon profile</title>
     </head>
     
@@ -9,20 +9,23 @@
     <h1>Mon Compte</h1>
     <p>
         <?php
-        $userFirstName = "abde";
-        $userLastName = "ben";
-        if (isset($_GET['$userFirstName']) AND isset($_GET['$userLastName']))
-            echo '<p>Bonjour ' . $_GET['userFirstName'] . ' '. $_GET['userLastName'] . '</p>';
+        if (isset($_POST['UserName']) AND isset($_POST['Password']))
+            echo '<p>Bonjour ' . htmlspecialchars($_POST['UserName']) . ' '. 'Pass=' . htmlspecialchars($_POST['Password']) . '</p>';
         else
             echo 'Connectez-vous pour voir votre profile !';
         ?>
     </p>
     <?php
     if ($connection === true)
-        echo '<button>Se deconnecter</button>';
+        {
+            echo '<a href="./index.php"><button>Se deconnecter</button></a>';
+        }
     else
-        echo '<a href="./connection.php" target="_blank">Se connecter</a>';
+        echo '<a href="./connection.php"><button>Se connecter</button></a>';
             ?>
+        <footer>
+            <?php include('./footer.php');?>
+        </footer>
     </body>
 
 </html>
