@@ -1,17 +1,27 @@
-<!Doctype html>
+<?php
+session_start();
+$_SESSION['user'] = [
+    'UserName' => 'Abde',
+    'Password' => '0000',
+    'prenom' => 'abdenour',
+    'nom'=> 'bensouna',
+];
+
+?>
+<!DOCTYPE html>
 <html>
     <head>
-        <?php include('./doctype.php');?>
-        <title>GBAF extranet</title>
+        <?php include("./head.php"); ?>
     </head>
+    
     
     <body>
     <?php include('./header.php'); ?>
         <main>
-            <div class="presentation">
+            <div>
             <article>
-                <section>
-                    <h1>texte de présentation du GBAF et du site</h1>
+                <section class="presentation_gbaf">
+                    <?php include('txt_presentation_gbaf.php');?>
                     <img scr="" rel="illustration">
                 </section>
                 <section>

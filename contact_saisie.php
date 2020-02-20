@@ -1,9 +1,12 @@
-<!Doctype html>
+<?php
+session_start();
+?>
+<!DOCTYPE html>
 <hmtl>
     <head>
-        <?php include("./doctype.php");?>
-        <title>Saisie contact</title>
-    </head>    
+        <?php include("./head.php");?>
+    </head>
+
     <body>
         <header>
             <?php include('./header.php');?>
@@ -11,7 +14,7 @@
         <main>
             <h1>Message bien reçus</h1>
             <?php
-            echo '<p>' . htmlspecialchars($_POST['']) . '</p>';
+            echo '<p>' . htmlspecialchars($_POST['contact']) . '</p>';
             ?>
         </main>
         <footer>
