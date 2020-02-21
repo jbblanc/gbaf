@@ -18,6 +18,7 @@ session_start();
         </div>
 
         <footer>
+        <hr>
                 <nav class="nav_footer">
                     <p>|
                         <a href="./index.php" target="_blank"> Acceuil </a>| 

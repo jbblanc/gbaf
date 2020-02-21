@@ -1,6 +1,8 @@
 <?php
 session_start();
+
 ?>
+
 <!DOCTYPE html>
 <hmtl>
     <head>
@@ -11,10 +13,15 @@ session_start();
         <header>
             <?php include('./header.php');?>
         </header>
-        <main>
+        <main style="text-align: center">
             <h1>Message bien reçus</h1>
+           
             <?php
-            echo '<p>' . htmlspecialchars($_POST['contact']) . '</p>';
+                echo '<h4>Votre email : </h4>';
+                echo '<p>' . htmlspecialchars($_POST['email']) . '</p>';
+                echo '<h5>Option choisie : ' . $_POST['option']. '</h5>';
+                echo  '<h4>Votre message : </h4>';
+                echo '<p>' . htmlspecialchars($_POST['message']) . '</p>';
             ?>
         </main>
         <footer>
