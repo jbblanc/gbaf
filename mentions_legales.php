@@ -21,8 +21,8 @@ session_start();
         <hr>
                 <nav class="nav_footer">
                     <p>|
-                        <a href="./index.php" target="_blank"> Acceuil </a>| 
-                        <a href="./contact.php" target="_blank"> Contact </a> 
+                        <a href="./index.php"> Acceuil </a>| 
+                        <a href="./contact.php"> Contact </a> 
                     |</p>
                 </nav>
         </footer>
