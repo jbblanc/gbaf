@@ -15,25 +15,27 @@ session_start();
 
         <main>
         <?php
-        $connection = true;
-        if ($connection === true)
-            {
-                echo '<h1>Mon Compte</h1>';
-                if (isset($_SESSION['user']['UserName']) AND isset($_SESSION['user']['Password']))
+        if ($_POST['UserName'] === 'abde' && $_POST['Password'] === '0000')
+        {
+            $_SESSION['user'] = [
+            'UserName' => 'abde',
+            'prenom' => 'abdenour',
+            'nom'=> 'bensouna',
+            ];
+        }
+        if (isset($_SESSION['user']['UserName']) && $_SESSION['user']['UserName'] === 'abde')
                 {
-                    echo '<p>UserName : ' . htmlspecialchars($_SESSION['user']['UserName']) . ' '. '</br>Password : ' . htmlspecialchars($_SESSION['user']['Password']) . '</p>';
-                    echo '<p>Nom : ' . htmlspecialchars($_SESSION['user']['nom']) . ' '. '</br>Prenom : ' . htmlspecialchars($_SESSION['user']['prenom']) . '</p>';
-                    echo '<a href="./index.php"><button>Se deconnecter</button></a>';
-                    // if (button'se_deconnecter='on')
-                    // {
-                    //     session_destroy();
-                    // }
+                    echo '<h1>Mon Compte</h1>';
+                    echo '<p>UserName : ' . htmlspecialchars($_SESSION['user']['UserName']) .  '</p>';
+                    echo '<p>Nom : ' . htmlspecialchars($_SESSION['user']['nom']) . ' '. 
+                    '</br>Prenom : ' . htmlspecialchars($_SESSION['user']['prenom']) . '</p>';
+                    echo '<a href="./log_out.php"><button>Se deconnecter</button></a>';
                 }
-            }
             else
             {
                 echo 'Connectez-vous pour voir votre profile !</br>';
-                echo '<a href="./connection.php"><button>Se connecter</button></a>';
+                echo '<a href="./sign_in.php"><button>Se connecter</button></a>';
+                echo '<a href="./log_out.php"><button>Se deconnecter</button></a>';
             }
         ?>
         </main>

@@ -1,11 +1,5 @@
 <?php
 session_start();
-$_SESSION['user'] = [
-    'UserName' => 'Abde',
-    'Password' => '0000',
-    'prenom' => 'abdenour',
-    'nom'=> 'bensouna',
-];
 
 ?>
 <!DOCTYPE html>
@@ -19,17 +13,18 @@ $_SESSION['user'] = [
     <?php include('./header.php'); ?>
         <main>
             <div>
-            <article>
-                <section class="presentation_gbaf">
-                    <?php include('txt_presentation_gbaf.php');?>
-                    <img scr="" rel="illustration">
+                <article>
+                    <section class="presentation_gbaf">
+                        <?php include('./txt_presentation_gbaf.php');?>
+                        <img id="img_flag" 
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Flag_of_France.svg/langfr-1920px-Flag_of_France.svg.png"
+                        rel="illustration">
+                    </section>
+                    <section>
+                        <h2> text acteurs et partenaires</h2> 
+                <?php include('./section_acteurs.php'); ?>
                 </section>
-                <section>
-                    <h2> text acteurs et partenaires</h2>
-                </section>
-            </div>
-           <?php include('./section_acteurs.php'); ?>
-            </article>        
+            </div>        
         </main>
 
         <footer>
