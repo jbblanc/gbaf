@@ -1,6 +1,13 @@
 <?php
 session_start();
-
+try {
+    $bdd = new PDO('mysql:host=localhost;dbname=gbaf_bd', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+}
+catch(Exception $e)
+{
+    die('Erreur: '. $e -> getMessage());
+}
+$users = $bdd -> query('SELECT * FROM user');
 ?>
 <!DOCTYPE html>
 <html>
@@ -25,6 +32,12 @@ session_start();
         }
         if (isset($_SESSION['user']['UserName']) && $_SESSION['user']['UserName'] === 'abde')
                 {
+                    while($donnes = $users -> fetch())
+                    {
+                        $img = $donnes['profile_picture_path'];
+                        echo '<p>' . $donnes['nom']. '</br>' . $donnes['prenom']. '</br>' .$donnes['user_name'] . '</br>' . $donnes['email'] . 
+                        '</p>' . '<img id="img_profile" style="width: 10%" src="' . $img . '"/>';
+                    }
                     echo '<h1>Mon Compte</h1>';
                     echo '<p>UserName : ' . htmlspecialchars($_SESSION['user']['UserName']) .  '</p>';
                     echo '<p>Nom : ' . htmlspecialchars($_SESSION['user']['nom']) . ' '. 

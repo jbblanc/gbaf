@@ -21,6 +21,7 @@ session_start();
                         rel="illustration">
                     </section>
                     <section>
+                    <a  href='./sign_up.php'><button>sign_up</button></a>
                         <h2> text acteurs et partenaires</h2> 
                 <?php include('./section_acteurs.php'); ?>
                 </section>
