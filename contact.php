@@ -1,7 +1,4 @@
-<?php
-session_start();
 
-?>
 <hmtl>
     <head>
         <?php include("./head.php");?>
@@ -20,15 +17,10 @@ session_start();
                 <div class="contact_form">
                     <form name="contact_form" method="post" action="./contact_saisie.php">
                         <p>
-                            <textarea type="text" name="message" placeholder="Message" rows="10" cols="40" style="margin: 0" required></textarea></br>
-                            <input type="text" name="email" placeholder="E-mail" required></br>
-                            <!-- adding option in list-->
-                            <select name="option" style="width: 100%; mar">   
-                                <option value="Commentaires ou suggestions">Commentaires ou suggestions</option>    
-                                <option value="Probléme technique">Probléme technique</option>
-                            </select>
+                            <textarea type="text" name="message" placeholder="Message" rows="10" cols="40" required></textarea></br>
+                            <input id="email" type="text" name="email" placeholder="E-mail" required></br>
                             <!-- buttom send-->
-                            <input type="submit" name="envoyer" value="ENVOYER"/></br>
+                            <input id="envoyer" type="submit" name="envoyer" value="ENVOYER"/></br>
                         </p>
                     </form>
                 </div>
