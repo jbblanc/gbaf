@@ -1,5 +1,5 @@
 <?php
-session_start();
+require './_db.php';
 
 ?>
 
@@ -19,9 +19,9 @@ session_start();
             <?php
                 echo '<h4>Votre email : </h4>';
                 echo '<p>' . htmlspecialchars($_POST['email']) . '</p>';
-                echo '<h5>Option choisie : ' . $_POST['option']. '</h5>';
                 echo  '<h4>Votre message : </h4>';
                 echo '<p>' . htmlspecialchars($_POST['message']) . '</p>';
+                header('Location: ./index.php');
             ?>
         </main>
         <footer>
