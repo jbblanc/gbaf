@@ -33,9 +33,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
         $req_id = $pdo->prepare("SELECT user_id FROM users WHERE user_name = ?");
         $req_id->execute([ htmlspecialchars($_POST['user_name'])]);
         $result = $req_id->fetch();
-        $id = $result[0];
+        $user_id = $result[0];
         // add user data to session id nom prenom
-        $_SESSION['id'] = $id;
+        $_SESSION['user_id'] = $user_id;
         $_SESSION['nom'] = $_POST['nom'];
         $_SESSION['prenom'] = $_POST['prenom'];
         $_SESSION['user_name'] = $_POST['user_name'];
@@ -55,7 +55,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
     </head>
 
     <body>
-        <?php include('./header.php');?>
         <main>
             <form name="sign_up_form" method="POST" action="./sign_up.php">
                 <div class="sign_up_form">
