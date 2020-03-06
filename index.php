@@ -1,65 +1,33 @@
 <?php
-    require './_db.php';
+session_start();
 
-    $uc = 0;
-    if ($uc == 0)
+if (isset($_SESSION['user_is_connected']) && $_SESSION['user_is_connected'])
+{
+    header('Location: home.php');
+}
+    
+
+else
     {
-?>
-
-    <!DOCTYPE html>
-    <html>
-        <head>
-            <?php include("./head.php"); ?>
-        </head>
-        
-        
-        <body>
-        <?php include('./header.php'); ?>
-            <main>
-                <div>
-                    <article>
-                        <section class="presentation_gbaf">
-                            <?php include('./txt_presentation_gbaf.php');?>
-                            <img id="img_flag" 
-                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Flag_of_France.svg/langfr-1920px-Flag_of_France.svg.png"
-                            rel="illustration">
-                        </section>
-                        <section>
-                            <h2>text acteurs et partenaires</h2> 
-                    <?php include('./section_acteurs.php'); ?>
-                    </section>
-                </div>        
-            </main>
-
-            <footer>
-                <?php include('./footer.php');?>
-            </footer>    
-        </body>    
-    </html>
-
+?>     
+        <!DOCTYPE html>
+            <html>
+                <head>
+                    <?php include("./head.php"); ?>
+                </head>
+                
+                <body>
+                    <h1>Bienvenu sur l'extranet des GBAF</h1>
+                    <div class="no_account">
+                        NO ACCOUNT
+                        <a href='./sign_up.php'>sign_up</a>
+                    </div>
+                    <?php include('sign_in.php');?>
+                    <footer>
+                        <?php include('./footer.php');?>
+                    </footer> 
+                </body>    
+            </html>
 <?php
-
     }
-    else
-    {
-    ?>
-        <head>
-            <?php include("./head.php"); ?>
-        </head>
-        <body>
-            <h1>Bienvenu sur l'extranet des GBAF</h1>
-                <div class="index_btn">
-                    <!-- <p>Sign Up</p> -->
-                    <button id="home_btn_up" type="button"><a href='./sign_up.php'>sign_up</a></button>
-                    
-                    <p> </p>
-                    <button id="home_btn_in" type="button"><a href='./sign_in.php'>sign_in</a></button>
-                </div>
-            <footer>
-                <?php include('./footer.php');?>
-            </footer> 
-        </body>
-    <?php
-    }
-
 ?>
