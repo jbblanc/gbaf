@@ -1,4 +1,6 @@
-
+<?php
+session_start();
+?>
 <hmtl>
     <head>
         <?php include("./head.php");?>
