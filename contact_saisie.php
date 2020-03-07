@@ -1,6 +1,5 @@
 <?php
 require './_db.php';
-
 ?>
 
 <!DOCTYPE html>
