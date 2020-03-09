@@ -16,6 +16,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
         $_SESSION['user_id']
     ]);
     $nbr_u_n_v = $user_name_verif->fetch();
+    $user_name_verif->closeCursor();
+    
     if ($nbr_u_n_v[0] > 0)
     {
         echo 'username deja utiliser</br>';
@@ -32,21 +34,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
             htmlspecialchars($_POST['question']),
             htmlspecialchars($_POST['reponse']),
             $_SESSION['user_id']
-        ]);
-
-        $_SESSION['nom'] = htmlspecialchars($_POST['nom']);
-        $_SESSION['prenom'] = htmlspecialchars($_POST['prenom']);
-        $_SESSION['user_name'] = htmlspecialchars($_POST['user_name']);
-        $_SESSION['password'] = htmlspecialchars($_POST['password']);;
-        $_SESSION['question'] = htmlspecialchars($_POST['question']);;
-        $_SESSION['reponse'] = htmlspecialchars($_POST['reponse']);
-    }
+            ]);
+            
+            $_SESSION['nom'] = htmlspecialchars($_POST['nom']);
+            $_SESSION['prenom'] = htmlspecialchars($_POST['prenom']);
+            $_SESSION['user_name'] = htmlspecialchars($_POST['user_name']);
+            $_SESSION['password'] = htmlspecialchars($_POST['password']);;
+            $_SESSION['question'] = htmlspecialchars($_POST['question']);;
+            $_SESSION['reponse'] = htmlspecialchars($_POST['reponse']);
+        }
 }
 //fetch all user_data WHERE user_name == SESSION['user_name']
 $req = $pdo->prepare("SELECT nom, prenom, user_name, password, question, reponse FROM users WHERE user_id = ?");
 $req->execute([$_SESSION['user_id']]);
 $user_data = $req->fetch();
-
+$req->closeCursor();
 
 
 ?>
