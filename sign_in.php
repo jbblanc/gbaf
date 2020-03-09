@@ -9,6 +9,6 @@
                 <button type="submit" name="valider">VALIDER</button>
             </form>
         </div>
-        <button name="forgetpassword"><a href="./recup_password.php">Forget Password ?</a></button>
+        <button name="forgetpassword"><a href="./reset_password/recup_password.php">Mot de passe oublié ?</a></button>
     </main>
 </html>
