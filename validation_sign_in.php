@@ -7,11 +7,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 {
     $req = $pdo->prepare("SELECT user_id, user_name, nom, prenom FROM users WHERE user_name = ? AND password = ?");
     $req->execute([
-        $_POST['user_name'],
-        $_POST['password']
+        htmlspecialchars($_POST['user_name']),
+        htmlspecialchars($_POST['password'])
         ]);
     $user_data = $req->fetch();
-    
+    $req->closeCursor();
     if (isset($user_data['user_id']))
     {
         // add user data to session id nom prenom
@@ -27,7 +27,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
     {
         header('Location: index.php');
     }
-    
 }
 else 
 {
