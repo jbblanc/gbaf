@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 require '_db.php';
 
 //rq->fech()($_POST['user_name'] && $_POST['password'])
@@ -14,6 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
     $req->closeCursor();
     if (isset($user_data['user_id']))
     {
+        session_start();
         // add user data to session id nom prenom
         $_SESSION['user_id'] = $user_data['user_id'];
         $_SESSION['nom'] = $user_data['nom'];
