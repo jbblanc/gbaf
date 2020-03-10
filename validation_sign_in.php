@@ -1,5 +1,4 @@
 <?php
-
 require '_db.php';
 
 //rq->fech()($_POST['user_name'] && $_POST['password'])
