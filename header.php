@@ -7,3 +7,4 @@
     <a href="./user_page.php"><?=$_SESSION['nom']?> & <?=$_SESSION['prenom']?></a>
     <a href="./log_out.php"><button>Se déconnecter</button></a>
 </div>
+<hr>
