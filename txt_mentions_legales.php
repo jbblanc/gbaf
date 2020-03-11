@@ -1,5 +1,6 @@
 <h1>Mentions légales</h1>
 <h2>Définitions</h2>
+
 <p><b>Client&nbsp;:</b>&nbsp;tout professionnel ou personne physique capable au sens des articles 1123 et suivants du Code civil, ou personne morale, qui visite le Site objet des présentes conditions générales.<br>
 <b>Prestations et Services&nbsp;:</b> <a href="http://gbaf.ba-dev.com">http://gbaf.ba-dev.com</a> met à disposition des Clients&nbsp;:</p>
 
