@@ -63,7 +63,6 @@ $req->closeCursor();
     <body>
         <header>
             <?php include('./header.php');?>
-            <hr>
         </header>
         <main>
             <h1>Mon Compte</h1>  
@@ -89,7 +88,7 @@ $req->closeCursor();
                     <label for="reponse"><b>Réponse secrète</b></label>
                     <input type="text" placeholder="<?=$user_data['reponse']?>" value ="<?=$user_data['reponse']?>" name="reponse" required>
 
-                    <button type="submit">Update</button>
+                    <button type="submit">Mise à jour</button>
                 </div>
             </form>   
         </main>

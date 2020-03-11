@@ -19,8 +19,8 @@ else
                 <body>
                     <h1>Bienvenu sur l'extranet des GBAF</h1>
                     <div class="no_account">
-                        NO ACCOUNT
-                        <a href='./sign_up.php'>sign_up</a>
+                       
+                        <h4><a href='./sign_up.php'>Pas de compte ?</h4></a>
                     </div>
                     <?php include('sign_in.php');?>
                     <footer>
