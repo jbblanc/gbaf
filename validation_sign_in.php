@@ -4,13 +4,12 @@ require '_db.php';
 //rq->fech()($_POST['user_name'] && $_POST['password'])
 if ($_SERVER['REQUEST_METHOD'] == 'POST')
 {
-    $req = $pdo->prepare("SELECT user_id, user_name, nom, prenom FROM users WHERE user_name = ? AND password = ?");
-    $req->execute([
-        htmlspecialchars($_POST['user_name']),
-        htmlspecialchars($_POST['password'])
-        ]);
+    $vpswd = htmlspecialchars($_POST['password']);
+    $req = $pdo->prepare("SELECT user_id, user_name, nom, prenom password FROM users WHERE user_name = ?");
+    $req->execute([htmlspecialchars($_POST['user_name'])]);
     $user_data = $req->fetch();
     $req->closeCursor();
+    password_verify($vpswd, $user_data['password']);
     if (isset($user_data['user_id']))
     {
         session_start();

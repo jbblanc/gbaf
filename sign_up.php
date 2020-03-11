@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
     $user_name_verif = $pdo->prepare("SELECT COUNT(*) FROM users WHERE user_name = ?");
     $user_name_verif->execute([htmlspecialchars($_POST['user_name'])]);
     $nbr_u_n_v = $user_name_verif->fetch();
-
+    $user_name_verif->closeCursor();
     //verification if username does exist
     if ($nbr_u_n_v[0] > 0)
     {
@@ -17,12 +17,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
     }
     else
     {
+        $hpwd = htmlspecialchars($_POST['password']);
+        $password = password_hash($hpwd, PASSWORD_DEFAULT);
         $req = $pdo->prepare("INSERT INTO users SET nom = ?, prenom = ?, user_name = ?, password = ?, question = ?, reponse = ?");
         $req->execute([
             htmlspecialchars($_POST['nom']),
             htmlspecialchars($_POST['prenom']),
             htmlspecialchars($_POST['user_name']),
-            htmlspecialchars($_POST['password']),
+            $password,
             htmlspecialchars($_POST['question']),
             htmlspecialchars($_POST['reponse'])
         ]);
