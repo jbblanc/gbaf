@@ -13,7 +13,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
     if ($nbr_u_n_v[0] > 0)
     {
         echo 'username deja utiliser</br>';
-        // header('Location: ./sign_up.php');
     }
     else
     {
@@ -28,13 +27,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
             htmlspecialchars($_POST['question']),
             htmlspecialchars($_POST['reponse'])
         ]);
-        //END of the req
         $req->closeCursor();
         echo 'insert valide';
 
         $req_id = $pdo->prepare("SELECT user_id FROM users WHERE user_name = ?");
         $req_id->execute([ htmlspecialchars($_POST['user_name'])]);
         $result = $req_id->fetch();
+        $req_id->closeCursor();
         $user_id = $result[0];
         // add user data to session id nom prenom
         $_SESSION['user_id'] = $user_id;
@@ -42,7 +41,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
         $_SESSION['prenom'] = $_POST['prenom'];
         $_SESSION['user_name'] = $_POST['user_name'];
         $_SESSION['user_is_connected'] = true;
-        $req_id->closeCursor();
         header('Location: home.php');
         
     }

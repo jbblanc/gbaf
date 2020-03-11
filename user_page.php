@@ -25,12 +25,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
     else
     {
         //update sql champs form
+        $hpwd = htmlspecialchars($_POST['password']);
+        $password = password_hash($hpwd, PASSWORD_DEFAULT);
         $req = $pdo->prepare("UPDATE users SET nom = ?, prenom = ?, user_name = ?, password = ?, question = ?, reponse = ? WHERE user_id = ?");
         $req->execute([
             htmlspecialchars($_POST['nom']),
             htmlspecialchars($_POST['prenom']),
             htmlspecialchars($_POST['user_name']),
-            htmlspecialchars($_POST['password']),
+            $password,
             htmlspecialchars($_POST['question']),
             htmlspecialchars($_POST['reponse']),
             $_SESSION['user_id']
@@ -39,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
             $_SESSION['nom'] = htmlspecialchars($_POST['nom']);
             $_SESSION['prenom'] = htmlspecialchars($_POST['prenom']);
             $_SESSION['user_name'] = htmlspecialchars($_POST['user_name']);
-            $_SESSION['password'] = htmlspecialchars($_POST['password']);;
+            $_SESSION['password'] = $password;
             $_SESSION['question'] = htmlspecialchars($_POST['question']);;
             $_SESSION['reponse'] = htmlspecialchars($_POST['reponse']);
         }
