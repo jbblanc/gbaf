@@ -1,10 +1,10 @@
 <?php
 session_start();
-require '_db.php';
+require '../_db.php';
 
 if (!isset($_SESSION['user_is_connected']) || !$_SESSION['user_is_connected'])
 {
-    header('Location: ./index.php');
+    header('Location: ../index.php');
 }
 if ($_SERVER['REQUEST_METHOD'] == 'POST')
 {
@@ -19,6 +19,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 }
 else 
 {
-    header('Location: ./index.php');
+    header('Location: ../index.php');
 }
 ?>
