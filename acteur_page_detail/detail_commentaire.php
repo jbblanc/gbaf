@@ -5,12 +5,33 @@ if (!isset($_SESSION['user_is_connected']) || !$_SESSION['user_is_connected'])
 {
     header('Location: ./index.php');
 }
-//$req = $pdo->prepare("SELECT COUNT()");
+//count nbr of coms
 $req = $pdo->prepare("SELECT COUNT(acteur_id) FROM articles WHERE acteur_id = ?");
 $req->execute([$_SESSION['id']]);
 $nbr_total_comments = $req->fetch();
 $req->closeCursor();
 
+//count of all like
+$like = 1;
+$req = $pdo->prepare("SELECT COUNT(vote) FROM votes WHERE vote = ? AND acteur_id = ?");
+$req->execute([
+    $like,
+    $_SESSION['id']
+    ]);
+$nbr_like = $req->fetch();
+$req->closeCursor();
+
+//count all dislike
+$dislike = 0;
+$req = $pdo->prepare("SELECT COUNT(vote) FROM votes WHERE vote = ? AND acteur_id = ?");
+$req->execute([
+    $dislike,
+    $_SESSION['id']
+    ]);
+$nbr_dislike = $req->fetch();
+$req->closeCursor();
+
+//print all coms
 $req = $pdo->prepare("SELECT user_id, com, date FROM articles WHERE acteur_id = ? ORDER BY date DESC");
 $req->execute([$_SESSION['id']]);
 $comments_data = $req->fetchALL();
@@ -58,9 +79,75 @@ $req->closeCursor();
         }
 
     </script>
-
     <button onclick="write_comment();" >Nouveau commentaire</button>
-    <button onclick="();" ><?=$nrb_likes?></button>
+
+    <script type="text/javascript">
+        async function submit(like) {
+            try {
+                let form = new FormData();
+
+                form.append("vote", like);
+
+                const response = await fetch('/coursphp/gbaf/acteur_page_detail/vote.php', {
+                    method: 'POST',
+                    body: form 
+                })
+                
+                let data = await response.text()
+                let url = window.name;
+
+                if(response.status === 200) {
+                    window.location = url;
+                }
+                
+                console.log('data :', data);
+                
+            } catch (error) {
+                console.log(error);
+            }
+        }
+    
+        function like()
+        {
+            var like = 0;
+            submit(like);
+        }
+    </script>
+    <button onclick="like();" ><?=$nbr_like[0]?></button>
+    
+    <script type="text/javascript">
+        async function submit(dislike) {
+            try {
+                let form = new FormData();
+
+                form.append("vote", dislike);
+
+                const response = await fetch('/coursphp/gbaf/acteur_page_detail/vote.php', {
+                    method: 'POST',
+                    body: form 
+                })
+                
+                let data = await response.text()
+                let url = window.name;
+
+                if(response.status === 200) {
+                    window.location = url;
+                }
+                
+                console.log('data :', data);
+                
+            } catch (error) {
+                console.log(error);
+            }
+        }
+
+        function dislike()
+        {
+            var dislike = 0;
+            submit(dislike);
+        }
+    </script>
+    <button onclick="dislike();" ><?=$nbr_dislike[0]?></button>
 
     <?php
     foreach($comments_data as $com)
