@@ -10,7 +10,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
     $hpass = password_hash($again_password, PASSWORD_DEFAULT);
     if ($new_password == $again_password)
     {
-        echo ' post reponse == db reponse //';
         $password_update = $pdo->prepare("UPDATE users SET password = ? WHERE user_name = ? AND question = ? AND reponse = ?");
         $password_update->execute([
             $hpass,

@@ -11,7 +11,7 @@ $req->execute([$_SESSION['id']]);
 $nbr_total_comments = $req->fetch();
 $req->closeCursor();
 
-//count of all like
+//count all like
 $like = 1;
 $req = $pdo->prepare("SELECT COUNT(vote) FROM votes WHERE vote = ? AND acteur_id = ?");
 $req->execute([
@@ -62,8 +62,6 @@ $req->closeCursor();
                     window.location = url;
                 }
                 
-                console.log('data :', data);
-                
             } catch (error) {
                 console.log(error);
             }
@@ -82,11 +80,11 @@ $req->closeCursor();
     <button onclick="write_comment();" >Nouveau commentaire</button>
 
     <script type="text/javascript">
-        async function submit(like) {
+        async function submitLike() {
             try {
                 let form = new FormData();
 
-                form.append("vote", like);
+                form.append("vote", 1);
 
                 const response = await fetch('/coursphp/gbaf/acteur_page_detail/vote.php', {
                     method: 'POST',
@@ -100,27 +98,21 @@ $req->closeCursor();
                     window.location = url;
                 }
                 
-                console.log('data :', data);
-                
             } catch (error) {
                 console.log(error);
             }
         }
     
-        function like()
-        {
-            var like = 0;
-            submit(like);
-        }
+      
     </script>
-    <button onclick="like();" ><?=$nbr_like[0]?></button>
+    <button onclick="submitLike();" ><?=$nbr_like[0]?></button>
     
     <script type="text/javascript">
-        async function submit(dislike) {
+        async function submitDislike() {
             try {
                 let form = new FormData();
 
-                form.append("vote", dislike);
+                form.append("vote", 0);
 
                 const response = await fetch('/coursphp/gbaf/acteur_page_detail/vote.php', {
                     method: 'POST',
@@ -128,26 +120,20 @@ $req->closeCursor();
                 })
                 
                 let data = await response.text()
+
                 let url = window.name;
 
                 if(response.status === 200) {
                     window.location = url;
                 }
                 
-                console.log('data :', data);
                 
             } catch (error) {
                 console.log(error);
             }
         }
-
-        function dislike()
-        {
-            var dislike = 0;
-            submit(dislike);
-        }
     </script>
-    <button onclick="dislike();" ><?=$nbr_dislike[0]?></button>
+    <button onclick="submitDislike();" ><?=$nbr_dislike[0]?></button>
 
     <?php
     foreach($comments_data as $com)
