@@ -92,5 +92,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
         </main>
 
         <?php include('./footer.php');?>
-    </body>
+    <?php include('./script.php');?> </body>
 </html>

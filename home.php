@@ -35,6 +35,6 @@
 
             <footer>
                 <?php include('./footer.php');?>
-            </footer> 
-        </body>    
+            </footer>
+        <?php include('./script.php');?> </body>    
     </html>

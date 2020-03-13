@@ -25,8 +25,8 @@ else
                     <?php include('sign_in.php');?>
                     <footer>
                         <?php include('./footer.php');?>
-                    </footer> 
-                </body>    
+                    </footer>  
+                <?php include('./script.php');?> </body>    
             </html>
 <?php
     }

@@ -32,6 +32,6 @@ session_start();
         <footer>
             <?php include('./footer.php');?>
         </footer>
-    </body>
+    <?php include('./script.php');?> </body>
 
 </html>

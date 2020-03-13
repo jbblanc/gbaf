@@ -21,5 +21,5 @@ if (!isset($_SESSION['user_is_connected']) || !$_SESSION['user_is_connected'])
         <footer>
             <?php include('./footer.php');?>
         </footer> 
-    </body>    
+    <?php include('./script.php');?> </body>    
 </html>

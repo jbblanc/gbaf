@@ -25,4 +25,4 @@ session_start();
                     |</p>
                 </nav>
         </footer>
-    </body>
+    <?php include('./script.php');?> </body>
