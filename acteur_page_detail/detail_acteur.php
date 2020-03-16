@@ -19,7 +19,7 @@ $req->closeCursor();
     foreach($acteur_elt as $acteur)
     {
     ?>
-        <div class="text-center p-5">
+        <div class="text-center ">
           <img width="80%" height="80%" src="<?=$acteur['acteur_picture_path']?>" class="rounded" alt="<?=$acteur['acteur_name']?>">
         </div>
         <div class="jumbotron p-3 p-md-5 rounded bg-white">
