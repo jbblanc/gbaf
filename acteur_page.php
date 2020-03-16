@@ -14,10 +14,12 @@ if (!isset($_SESSION['user_is_connected']) || !$_SESSION['user_is_connected'])
     
     <body>
         <?php include('./header.php'); ?>
-        <main>
+        <div>
             <?php include('./acteur_page_detail/detail_acteur.php');?>
+        </div>
+        <div>
             <?php include('./acteur_page_detail/detail_commentaire.php');?>
-        </main>
+        </div>
         <footer>
             <?php include('./footer.php');?>
         </footer> 

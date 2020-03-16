@@ -14,24 +14,24 @@
             <?php include("./head.php"); ?>
         </head>
         
-        <body>
-            <?php include('./header.php'); ?>
-            
-                <main>
-                <div>
-                    <section class="presentation_gbaf">
-                        <?php include('./txt_presentation_gbaf.php');?>
-                        <img id="img_flag" style="width: 35%; heigth: 30%"
-                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Flag_of_France.svg/langfr-1920px-Flag_of_France.svg.png"
-                        rel="drapeau france">
-                    </section>
+        <body class="container">
+            <header clas="">
+                <?php include('./header.php'); ?>
+            </header>
+                
+            <div class="container">
+                <section class="justify-content-align my-3 p-3 bg-white rounded shadow-sm">
+                    <?php include('./txt_presentation_gbaf.php');?>
+                    <img class="col-sm-4 offset-sm-4 col-sm-4" width="300" height="20%"
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Flag_of_France.svg/langfr-1920px-Flag_of_France.svg.png"
+                    rel="drapeau france">
+                </section>
 
-                    <section class="index_acteurs">
-                        <h2 style="text-align: center">text acteurs et partenaires</h2> 
-                        <?php include('./section_acteurs.php'); ?>
-                    </section>
-                </div>        
-            </main>  
+                <h2 style="text-align: center">text acteurs et partenaires</h2> 
+                <section class="">
+                    <?php include('./section_acteurs.php'); ?>
+                </section>
+            </div>        
 
             <footer>
                 <?php include('./footer.php');?>

@@ -14,16 +14,20 @@ $acteur_elt = $req->fetchALL();
 $req->closeCursor();
 ?>
 
-<div id="acteur">
+<div class="container">
     <?php
     foreach($acteur_elt as $acteur)
     {
     ?>
-        <div class="acteur">
-            <img class="img_acteurs" src="<?=$acteur['acteur_picture_path']?>" rel="<?=$acteur['acteur_name']?>">
-            <h2><?=$acteur['acteur_name']?></h2>
-            <h3><?=$acteur['text_contenu']?></h3></br>
-        </div></br>
+        <div class="text-center p-5">
+          <img width="80%" height="80%" src="<?=$acteur['acteur_picture_path']?>" class="rounded" alt="<?=$acteur['acteur_name']?>">
+        </div>
+        <div class="jumbotron p-3 p-md-5 rounded bg-white">
+                <div class="col-md-6 px-0">
+                  <h1 class=""><?=$acteur['acteur_name']?></h1>
+                  <p class="lead col-xs-4 my-4"><?=$acteur['text_contenu']?></p>
+                </div>
+        </div>
     <?php
     }
 ?>

@@ -17,12 +17,17 @@ session_start();
         </div>
 
         <footer>
-        <hr>
-                <nav class="nav_footer">
-                    <p>|
-                        <a href="./index.php"> Acceuil </a>| 
-                        <a href="./contact.php"> Contact </a> 
-                    |</p>
-                </nav>
+            <nav class="navbar navbar-light bg-light justify-content-center">
+                <ul class="nav justify-content-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./index.php">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./contact.php">Contact</a>
+                    </li>
+                </ul>
+            </nav>
         </footer>
-    <?php include('./script.php');?> </body>
+        <?php include('./script.php');?> 
+    </body>
+</html>

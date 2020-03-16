@@ -1,37 +1,41 @@
-<?php
-session_start();
-?>
-<hmtl>
+<html>
     <head>
         <?php include("./head.php");?>
     </head>
 
-    <body>
+    <body class="text-center">
         <header>
             <?php include('./header.php');?>
         </header>
-
-        <!-- ceartion of form -->
-        <main>
-            <div class="container_contact_form">
-                <h2>Nous Contacter</h2>
-                <p>Un probléme, une question ? Contacter nous via le formulaire suivant.</p>
-                <div class="contact_form">
-                    <form name="contact_form" method="post" action="./contact_saisie.php">
-                        <p>
-                            <textarea type="text" name="message" placeholder="Message" rows="10" cols="40" required></textarea></br>
-                            <input id="email" type="text" name="email" placeholder="E-mail" required></br>
-                            <!-- buttom send-->
-                            <input id="envoyer" type="submit" name="envoyer" value="ENVOYER"/></br>
-                        </p>
-                    </form>
-                </div>
+        <h2>Nous Contacter</h2>
+        <p>Un probléme, une question ? Contacter nous via le formulaire suivant.</p>
+        <form method="post" action="./contact_saisie.php">
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Email</label>
+                <input type="email" class="form-control" id="exampleFormControlInput1" name="email" placeholder="name@example.com">
             </div>
-        </main>
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">Message</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" name="message" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-dark">ENVOYER</button>
+        </form>
 
         <footer>
-            <?php include('./footer.php');?>
+            <nav class="navbar navbar-light bg-light justify-content-center">
+                <ul class="nav justify-content-center">
+                    <li class="nav-item">
+                        <p class="nav-link">GBAF par Abdenour Bensouna</p>  
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./index.php">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./mentions_legales.php">Mentions légales</a>
+                    </li>
+                </ul>
+            </nav>
         </footer>
-    <?php include('./script.php');?> </body>
-
+    <?php include('./script.php');?> 
+    </body>
 </html>

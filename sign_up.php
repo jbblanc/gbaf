@@ -54,43 +54,48 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
         <?php include('./head.php');?>
     </head>
 
-    <body>
-        <main>
-            <form name="sign_up_form" method="POST" action="./sign_up.php">
-                <div class="sign_up_form">
-                    <h1>Sign up</h1>
-                    <p>Remplir les champs</p>
-                    <hr>
-                    <label for="nom"><b>Nom</b></label>
-                    <input type="text" placeholder="Entrer votre Nom" name="nom" required>
-
-                    <label for="prenom"><b>Prénom</b></label>
-                    <input type="text" placeholder="Entrer votre prénom" name="prenom" required>
-
-                    <label for="username"><b>UserName</b></label>
-                    <input type="text" placeholder="Entrer votre UserName" name="user_name" required>
-
-                    <label for="password"><b>Password</b></label>
-                    <input type="password" placeholder="Entrer votre mot de passe" name="password" requred>
-
-                    <label for="question"><b>Question secrète</b></label>
-                    <input type="text" placeholder="Entrer votre question secrète" name="question" required>
-
-                    <label for="reponse"><b>Réponse secrète</b></label>
-                    <input type="text" placeholder="Entrer la réponse à la question secrète" name="reponse" required>
-
-                    <p>En créant un compte vous accepter nos <a href="./mentions_legales.php" style="color: dodgerblue">Terms & Conditions</a></p>
-
-                    <div class="clearfix">
-                        <button type="submit">Sign Up</button>
-                    </div>
+    <body class="text-center">
+    <img class="mb-4" src="https://user.oc-static.com/upload/2019/07/15/15631755744257_LOGO_GBAF_ROUGE%20%281%29.png" 
+        alt="" width="72" height="72">
+        <h1>Sign up</h1>
+        <p>Remplir les champs</p>
+  </br>
+        <form method="POST" action="./sign_up.php">
+        
+            <div class="form-row">
+                <div class="col-md-4 mb-3">
+                    <label for="validationDefault01">Nom</label>
+                    <input type="text" class="form-control" id="validationDefault01" placeholder="Entrer votre Nom" name="nom" required autofocus>
                 </div>
-            </form>
-            <div class="clearfix">
-                <a href="./index.php"><button>Annuler</button></a>
+                <div class="col-md-4 mb-3">
+                    <label for="validationDefault02">Prénom</label>
+                    <input type="text" class="form-control" id="validationDefault02" placeholder="Entrer votre prénom" name="prenom" required> 
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="validationDefault03">Username</label>
+                    <input type="text" class="form-control" id="validationDefault03" placeholder="Entrer votre UserName" name="user_name" required>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <label for="validationDefault04">Question secrète</label>
+                    <input type="text" class="form-control" id="validationDefault04" placeholder="Entrer votre question secrète" name="question" required>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <label for="validationDefault05">Réponse secrète</label>
+                    <input type="text" class="form-control" id="validationDefault05" placeholder="Entrer la réponse à la question secrète" name="reponse" required>
+                </div>
             </div>
-        </main>
-
+            <div class="form-group">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+                    <label class="form-check-label" for="invalidCheck2">
+                    En créant un compte vous accepter nos <a href="./mentions_legales.php" style="color: dodgerblue">Terms & Conditions</a>
+                    </label>
+                </div>
+            </div>
+        <button class="btn btn-primary" type="submit">VALIDATION</button>
+        <a class="btn btn-sm btn-outline-secondary" type="button" href="./index.php">Annuler</a>
+    </form>
+    </br>
         <?php include('./footer.php');?>
     <?php include('./script.php');?> </body>
 </html>
