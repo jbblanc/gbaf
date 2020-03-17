@@ -2,13 +2,12 @@
     <img class="mb-4" src="https://user.oc-static.com/upload/2019/07/15/15631755744257_LOGO_GBAF_ROUGE%20%281%29.png" 
     alt="" width="72" height="72">
     <h1 class="h3 mb-3 font-weight-normal">Connectez-vous</h1>
-    
+    <a class="btn btn-sm btn-outline-secondary col-sm-4 mt-4 mb-4" type="button" href="./sign_up.php">Pas de compte ?</a>
     <label for="inputUserName" class="sr-only">UserName</label>
-    <input type="text" id="inputEmail" class="form-control" placeholder="UserName" name="user_name" required autofocus>
+    <input type="text" id="inputEmail" class="form-control" placeholder="Psedo" name="user_name" required autofocus>
 </br>
     <label for="inputPassword" class="sr-only">Password</label>
-    <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="password" required>
+    <input type="password" id="inputPassword" class="form-control" placeholder="Mot de passe" name="password" required>
 </br>
-    <button class="btn btn-lg btn-primary btn-block" type="submit">Connection</button>
-    <p class="mt-5 mb-3 text-muted"><a href='./sign_up.php'>Pas de compte ?</p></a>
+    <button class="btn btn-lg btn-primary btn-block mb-4" type="submit">Connection</button>
 </form>
