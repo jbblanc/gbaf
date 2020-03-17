@@ -62,7 +62,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
   </br>
         <form method="POST" action="./sign_up.php">
         
-            <div class="form-row">
+            <div class="form-row" style="padding: 5px">
                 <div class="col-md-4 mb-3">
                     <label for="validationDefault01">Nom</label>
                     <input type="text" class="form-control" id="validationDefault01" placeholder="Entrer votre Nom" name="nom" required autofocus>
@@ -75,13 +75,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
                     <label for="validationDefault03">Username</label>
                     <input type="text" class="form-control" id="validationDefault03" placeholder="Entrer votre UserName" name="user_name" required>
                 </div>
-                <div class="col-md-6 mb-4">
-                    <label for="validationDefault04">Question secrète</label>
-                    <input type="text" class="form-control" id="validationDefault04" placeholder="Entrer votre question secrète" name="question" required>
+                <div class="col-md-4 mb-4">
+                    <label for="validationDefault04">Password</label>
+                    <input type="password" class="form-control" id="validationDefault04" placeholder="Entrer votre Password" name="password" required>
                 </div>
-                <div class="col-md-6 mb-4">
-                    <label for="validationDefault05">Réponse secrète</label>
-                    <input type="text" class="form-control" id="validationDefault05" placeholder="Entrer la réponse à la question secrète" name="reponse" required>
+                <div class="col-md-4 mb-4">
+                    <label for="validationDefault05">Question secrète</label>
+                    <input type="text" class="form-control" id="validationDefault05" placeholder="Entrer votre question secrète" name="question" required>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <label for="validationDefault06">Réponse secrète</label>
+                    <input type="text" class="form-control" id="validationDefault06" placeholder="Entrer la réponse à la question secrète" name="reponse" required>
                 </div>
             </div>
             <div class="form-group">

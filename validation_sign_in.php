@@ -10,8 +10,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
     $req->execute([htmlspecialchars($_POST['user_name'])]);
     $user_data = $req->fetch();
     $req->closeCursor();
-    password_verify($vpswd, $user_data['password']);
-    if (isset($user_data['user_id']))
+    $verifpass = password_verify($vpswd, $user_data['password']);
+    if (isset($user_data['user_id']) && $verifpass == true)
     {
         session_start();
         // add user data to session id nom prenom

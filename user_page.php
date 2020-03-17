@@ -26,13 +26,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
     {
         //update sql champs form
         $hpwd = htmlspecialchars($_POST['password']);
-        $password = password_hash($hpwd, PASSWORD_DEFAULT);
+        $hpassword = password_hash($hpwd, PASSWORD_DEFAULT);
         $req = $pdo->prepare("UPDATE users SET nom = ?, prenom = ?, user_name = ?, password = ?, question = ?, reponse = ? WHERE user_id = ?");
         $req->execute([
             htmlspecialchars($_POST['nom']),
             htmlspecialchars($_POST['prenom']),
             htmlspecialchars($_POST['user_name']),
-            $password,
+            $hpassword,
             htmlspecialchars($_POST['question']),
             htmlspecialchars($_POST['reponse']),
             $_SESSION['user_id']
@@ -41,13 +41,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
             $_SESSION['nom'] = htmlspecialchars($_POST['nom']);
             $_SESSION['prenom'] = htmlspecialchars($_POST['prenom']);
             $_SESSION['user_name'] = htmlspecialchars($_POST['user_name']);
-            $_SESSION['password'] = $password;
             $_SESSION['question'] = htmlspecialchars($_POST['question']);;
             $_SESSION['reponse'] = htmlspecialchars($_POST['reponse']);
         }
 }
 //fetch all user_data WHERE user_name == SESSION['user_name']
-$req = $pdo->prepare("SELECT nom, prenom, user_name, password, question, reponse FROM users WHERE user_id = ?");
+$req = $pdo->prepare("SELECT nom, prenom, user_name, question, reponse FROM users WHERE user_id = ?");
 $req->execute([$_SESSION['user_id']]);
 $user_data = $req->fetch();
 $req->closeCursor();
@@ -80,7 +79,7 @@ $req->closeCursor();
                     <input type="text" placeholder="<?=$user_data['user_name']?>" value ="<?=$user_data['user_name']?>" name="user_name" required>
 
                     <label for="password"><b>Password</b></label>
-                    <input type="password" placeholder="<?=$user_data['password']?>" value ="<?=$user_data['password']?>" name="password" requred>
+                    <input type="password" name="password" requred>
 
                     <label for="question"><b>Question secrète</b></label>
                     <input type="text" placeholder="<?=$user_data['question']?>" value ="<?=$user_data['question']?>" name="question" required>
