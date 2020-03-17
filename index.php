@@ -3,9 +3,8 @@ session_start();
 
 if (isset($_SESSION['user_is_connected']) && $_SESSION['user_is_connected'])
 {
-    header('Location: home.php');
+    header('Location: ./home.php');
 }
-    
 
 else
 {
@@ -17,8 +16,8 @@ else
         </head>
         
         <body class="text-center">
-            <h1>Bienvenu sur l'extranet des GBAF</h1>
-            <?php include('sign_in.php');?>
+            <h1>Bienvenue sur l'extranet des GBAF</h1>
+            <?php include('./sign_in.php');?>
             <footer>
                 <?php include('./footer.php');?>
             </footer>  

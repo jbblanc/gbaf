@@ -4,7 +4,7 @@
 
     if (!isset($_SESSION['user_is_connected']) || !$_SESSION['user_is_connected'])
     {
-        header('Location: index.php');
+        header('Location: ./index.php');
     }
 ?>
 
@@ -15,7 +15,7 @@
         </head>
         
         <body class="container">
-            <header clas="">
+            <header class="">
                 <?php include('./header.php'); ?>
             </header>
                 

@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
             htmlspecialchars($_POST['reponse'])
         ]);
         $req->closeCursor();
-        echo 'insert valide';
+
 
         $req_id = $pdo->prepare("SELECT user_id FROM users WHERE user_name = ?");
         $req_id->execute([ htmlspecialchars($_POST['user_name'])]);
@@ -36,12 +36,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
         $req_id->closeCursor();
         $user_id = $result[0];
         // add user data to session id nom prenom
-        $_SESSION['user_id'] = $user_id;
-        $_SESSION['nom'] = $_POST['nom'];
-        $_SESSION['prenom'] = $_POST['prenom'];
-        $_SESSION['user_name'] = $_POST['user_name'];
-        $_SESSION['user_is_connected'] = true;
-        header('Location: home.php');
+        // $_SESSION['user_id'] = $user_id;
+        // $_SESSION['nom'] = $_POST['nom'];
+        // $_SESSION['prenom'] = $_POST['prenom'];
+        // $_SESSION['user_name'] = $_POST['user_name'];
+        // $_SESSION['user_is_connected'] = true;
+        header('Location: ./index.php');
         
     }
 }
@@ -57,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
     <body class="text-center">
     <img class="mb-4" src="https://user.oc-static.com/upload/2019/07/15/15631755744257_LOGO_GBAF_ROUGE%20%281%29.png" 
         alt="" width="72" height="72">
-        <h1>Sign up</h1>
+        <h1>Inscription</h1>
         <p>Remplir les champs</p>
   </br>
         <form method="POST" action="./sign_up.php">
@@ -88,7 +88,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
                     <label class="form-check-label" for="invalidCheck2">
-                    En créant un compte vous accepter nos <a href="./mentions_legales.php" style="color: dodgerblue">Terms & Conditions</a>
+                    En créant un compte vous accepter nos <a href="./mentions_legales.php" style="color: dodgerblue">Termes & Conditions</a>
                     </label>
                 </div>
             </div>
