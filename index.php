@@ -15,7 +15,7 @@ else
             <?php include("./head.php"); ?>
         </head>
         
-        <body class="text-center">
+        <body class="container text-center mt-5">
             <h1>Bienvenue sur l'extranet des GBAF</h1>
             <?php include('./sign_in.php');?>
             <footer>

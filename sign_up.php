@@ -51,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
         <?php include('./head.php');?>
     </head>
 
-    <body class="container text-center">
+    <body class="container text-center mt-5">
     <img class="mb-4" src="https://user.oc-static.com/upload/2019/07/15/15631755744257_LOGO_GBAF_ROUGE%20%281%29.png" 
         rel="logo gbaf" width="72" height="72">
         <h1>Inscription</h1>
@@ -69,11 +69,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
                     <input type="text" class="form-control" id="validationDefault02" placeholder="Entrer votre prénom" name="prenom" required> 
                 </div>
                 <div class="col-md-4 mb-3">
-                    <label for="validationDefault03">Username 4 caractères minimum</label>
+                    <label for="validationDefault03">Psedo 4 caractères minimum</label>
                     <input type="text" class="form-control" id="validationDefault03" placeholder="Entrer votre UserName" name="user_name" required>
                 </div>
                 <div class="col-md-4 mb-4">
-                    <label for="validationDefault04">Password 8 caractères minimum</label>
+                    <label for="validationDefault04">Mot de passe 8 caractères minimum</label>
                     <input type="password" class="form-control" id="validationDefault04" placeholder="Entrer votre Password" name="password" required>
                 </div>
                 <div class="col-md-4 mb-4">
