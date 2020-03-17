@@ -37,7 +37,7 @@ $req->execute([$_SESSION['id']]);
 $comments_data = $req->fetchALL();
 $req->closeCursor();
 //print s or no for commentaire(s)
-$commentaire = ($nbr_total_comments[0] == 1) ? 'Connentaire' : 'Connentaires';
+$commentaire = ($nbr_total_comments[0] <= 1) ? 'Connentaire' : 'Connentaires';
 ?>
 <div class="row">
     <div class="offset-sm-1 col-sm-10">
