@@ -36,11 +36,13 @@ $req = $pdo->prepare("SELECT user_id, com, date FROM articles WHERE acteur_id = 
 $req->execute([$_SESSION['id']]);
 $comments_data = $req->fetchALL();
 $req->closeCursor();
+//print s or no for commentaire(s)
+$commentaire = ($nbr_total_comments[0] == 1) ? 'Connentaire' : 'Connentaires';
 ?>
 <div class="row">
     <div class="offset-sm-1 col-sm-10">
         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3">
-            <h3><?=$nbr_total_comments[0]?> Commentaires</h3> 
+            <h3><?=$nbr_total_comments[0] .' '. $commentaire?></h3> 
             <script type="text/javascript">
 
                 
