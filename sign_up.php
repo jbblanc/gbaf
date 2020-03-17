@@ -4,45 +4,42 @@ require './_db.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST')
 {
-    //fetch of the username
-    $user_name_verif = $pdo->prepare("SELECT COUNT(*) FROM users WHERE user_name = ?");
-    $user_name_verif->execute([htmlspecialchars($_POST['user_name'])]);
-    $nbr_u_n_v = $user_name_verif->fetch();
-    $user_name_verif->closeCursor();
-    //verification if username does exist
-    if ($nbr_u_n_v[0] > 0)
+    if (!(strlen(htmlspecialchars($_POST['user_name'])) || strlen(htmlspecialchars($_POST['password'])) <= 4))
     {
-        echo 'username deja utiliser</br>';
-    }
-    else
-    {
-        $hpwd = htmlspecialchars($_POST['password']);
-        $password = password_hash($hpwd, PASSWORD_DEFAULT);
-        $req = $pdo->prepare("INSERT INTO users SET nom = ?, prenom = ?, user_name = ?, password = ?, question = ?, reponse = ?");
-        $req->execute([
-            htmlspecialchars($_POST['nom']),
-            htmlspecialchars($_POST['prenom']),
-            htmlspecialchars($_POST['user_name']),
-            $password,
-            htmlspecialchars($_POST['question']),
-            htmlspecialchars($_POST['reponse'])
-        ]);
-        $req->closeCursor();
-
-
-        $req_id = $pdo->prepare("SELECT user_id FROM users WHERE user_name = ?");
-        $req_id->execute([ htmlspecialchars($_POST['user_name'])]);
-        $result = $req_id->fetch();
-        $req_id->closeCursor();
-        $user_id = $result[0];
-        // add user data to session id nom prenom
-        // $_SESSION['user_id'] = $user_id;
-        // $_SESSION['nom'] = $_POST['nom'];
-        // $_SESSION['prenom'] = $_POST['prenom'];
-        // $_SESSION['user_name'] = $_POST['user_name'];
-        // $_SESSION['user_is_connected'] = true;
-        header('Location: ./index.php');
-        
+        header('Location: ./sign_up.php');
+        //fetch of the username
+        $user_name_verif = $pdo->prepare("SELECT COUNT(*) FROM users WHERE user_name = ?");
+        $user_name_verif->execute([htmlspecialchars($_POST['user_name'])]);
+        $nbr_u_n_v = $user_name_verif->fetch();
+        $user_name_verif->closeCursor();
+        //verification if username does exist
+        if ($nbr_u_n_v[0] > 0)
+        {
+            echo 'username deja utiliser</br>';
+        }
+        else
+        {
+            $hpwd = htmlspecialchars($_POST['password']);
+            $password = password_hash($hpwd, PASSWORD_DEFAULT);
+            $req = $pdo->prepare("INSERT INTO users SET nom = ?, prenom = ?, user_name = ?, password = ?, question = ?, reponse = ?");
+            $req->execute([
+                htmlspecialchars($_POST['nom']),
+                htmlspecialchars($_POST['prenom']),
+                htmlspecialchars($_POST['user_name']),
+                $password,
+                htmlspecialchars($_POST['question']),
+                htmlspecialchars($_POST['reponse'])
+                ]);
+                $req->closeCursor();
+                
+                
+            $req_id = $pdo->prepare("SELECT user_id FROM users WHERE user_name = ?");
+            $req_id->execute([ htmlspecialchars($_POST['user_name'])]);
+            $result = $req_id->fetch();
+            $req_id->closeCursor();
+            $user_id = $result[0];
+            header('Location: ./index.php');                
+        }
     }
 }
 
@@ -54,9 +51,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
         <?php include('./head.php');?>
     </head>
 
-    <body class="text-center">
+    <body class="container text-center">
     <img class="mb-4" src="https://user.oc-static.com/upload/2019/07/15/15631755744257_LOGO_GBAF_ROUGE%20%281%29.png" 
-        alt="" width="72" height="72">
+        rel="logo gbaf" width="72" height="72">
         <h1>Inscription</h1>
         <p>Remplir les champs</p>
   </br>
@@ -72,11 +69,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
                     <input type="text" class="form-control" id="validationDefault02" placeholder="Entrer votre prénom" name="prenom" required> 
                 </div>
                 <div class="col-md-4 mb-3">
-                    <label for="validationDefault03">Username</label>
+                    <label for="validationDefault03">Username 4 caractères minimum</label>
                     <input type="text" class="form-control" id="validationDefault03" placeholder="Entrer votre UserName" name="user_name" required>
                 </div>
                 <div class="col-md-4 mb-4">
-                    <label for="validationDefault04">Password</label>
+                    <label for="validationDefault04">Password 8 caractères minimum</label>
                     <input type="password" class="form-control" id="validationDefault04" placeholder="Entrer votre Password" name="password" required>
                 </div>
                 <div class="col-md-4 mb-4">
