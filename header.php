@@ -7,7 +7,7 @@ else
 {
 ?>
 
-    <nav class="navbar navbar-light bg-white  container-fluid">
+    <nav class="navbar navbar-white bg-white  container-fluid">
         <a class="navbar-brand" href="./home.php"><img id="img_gbaf" width="50" height="50"
             src="https://user.oc-static.com/upload/2019/07/15/15631755744257_LOGO_GBAF_ROUGE%20%281%29.png"
             alt="Le logo de la GBAF">
