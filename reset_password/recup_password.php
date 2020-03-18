@@ -39,8 +39,8 @@ else
 {
 ?>
     <form class="recup_password" method="POST" action="./recup_password.php">
-        <label for="username"><b>UserName</b></label>
-        <input type="text" placeholder="Entrer votre UserName" name="user_name" required>
+        <label for="username"><b>Pseudo</b></label>
+        <input type="text" placeholder="Entrer votre Pseudo" name="user_name" required>
         <button type="submit">Validation</button>
     </form>
 <?php

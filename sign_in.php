@@ -8,6 +8,8 @@
 </br>
     <label for="inputPassword" class="sr-only">Password</label>
     <input type="password" id="inputPassword" class="form-control" placeholder="Mot de passe" name="password" required>
-</br>
+    <a class="nav-link active float-left" href="./reset_password/recup_password.php">Mot de passe oublié ?</a>
+    </br>
+    </br>
     <button class="btn btn-lg btn-primary btn-block mb-4" type="submit">Connection</button>
 </form>
